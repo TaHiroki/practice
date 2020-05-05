@@ -1,4 +1,9 @@
 class Admin::UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -13,20 +18,18 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
 
   end
 
-  def show
-  end
-
-  def index
-  end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :admin, :password, :password_confirmation)
   end
-  
+
 end
