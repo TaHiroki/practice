@@ -17,7 +17,7 @@
 require 'capybara/rspec'
 
 RSpec.configure do |config|
-  confing.before(:each, type: :system) do
+  config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless
   end
   
