@@ -1,4 +1,11 @@
 class Task < ApplicationRecord
+    def self.ransackable_attributes(auto_object = nil)
+        %w[name created_at]
+    end
+
+    def self.ransackable_associations(auto_object = nil)
+        []
+    end
 
     validates :name, presence: true
     validates :name, length: {maximum: 30}
